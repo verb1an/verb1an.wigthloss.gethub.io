@@ -67,6 +67,7 @@ body{
 
 a{
     text-decoration: none;
+    cursor: pointer;
     color: $c_link;
 
     font-size: 16px;
@@ -199,7 +200,8 @@ a{
 }
 
 .section{
-    margin: 90px 0;
+    padding: 90px 0;
+    display: block;
 
     .section__headers{
         max-width: 500px;
@@ -265,7 +267,7 @@ a{
         display: flex;
         align-items: center;
 
-        &:before, &:after{
+        &:before{
             opacity: 0.8;
             content: '';
             position: absolute;
@@ -278,11 +280,7 @@ a{
             background-color: $c_f;
             border-radius: 50%;
             z-index: -1;
-            filter: blur(400px);
-        }
-        &:after{
-            left: 0;
-            top: 140px;
+            filter: blur(200px);
         }
     }
 
@@ -516,6 +514,200 @@ a{
             }
         }
     }
+
+    .section__inner{
+        position: relative;
+        display: flex;
+        align-items: start;
+
+        &:before{
+            opacity: 0.8;
+            content: '';
+            position: absolute;
+            display: block;
+            top: 175px;
+            left: 400px;
+
+            width: 200px;
+            height: 200px;
+            background-color: $c_f;
+            border-radius: 50%;
+            z-index: -1;
+            filter: blur(200px);
+        }
+
+        .left__img__block{
+            width: 580px;
+            height: 620px;
+            margin-right: 50px;
+
+            .imges{
+
+                position: relative;
+                .bgsetka{
+                    position: absolute;
+                    top: 40px;
+                    left: 100px;
+                }
+                .bglines{
+                    position: absolute;
+                    top: 45%;
+                    right: 90px;
+                    transform: translateY(-50%);
+                }
+                
+                .mask{
+                    position: relative;
+                    width: 580px;
+                    height: 580px;
+                    overflow: hidden;
+                    border-radius: 50%;
+
+                    picture:first-child{
+                        img{
+                            position: absolute;
+                            left: 0%;
+                            top: 0;
+                        }
+                    }
+    
+                    picture:last-child{
+                        img{
+                            position: absolute;
+                            left: 50%;
+                            bottom: 20px;
+                            transform: translateX(-50%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#reviews__slider{
+    background-color: #F7F9FF;
+
+    .section__inner{
+        position: relative;
+    }
+
+    .slider{
+        display: flex;
+        width: 100%;
+        overflow: hidden;
+
+        .slide{
+            padding: 26px 22px 26px 30px;
+            background-color: $c_white;
+            border-radius: 15px;
+            box-shadow: 0px 10px 20px rgba(198, 198, 198, 0.07);
+            margin-right: 30px;
+            min-width: 370px;
+
+            .text{
+                font-size: 0.7rem;
+                font-weight: 400;
+                line-height: 1.4rem;
+                color: #353456;
+                max-width: 285px;
+
+                display: flex;
+                align-items: start;
+
+                p{
+                    position: relative;
+                    display: flex;
+                    &:before{
+                        font-family: 'wightloss';
+                        transform: translateY(-10px);
+                        margin-right: 5px;
+                        content: '\e900';
+                    }
+                    span{
+                        position: absolute;
+                        right: 5px;
+                        top: 50%;
+                        transform: rotateZ(180deg);
+                    }
+                }
+            }
+
+            .user{
+                display: flex;
+                align-items: center;
+                margin-bottom: 15px;
+                img{
+                    width: 45px;
+                    height: 45px;
+                    object-fit: cover;
+                    border-radius: 50%;
+                    margin-right: 12px;
+                }
+
+                .name{
+                    font-size: 0.9rem;
+                    font-weight: 500;
+                    color: $c_link;
+                }
+            }
+
+            .rating{
+                span{
+                    font-size: 1rem;
+                    padding: 6px;
+                    color: #FFDB73;
+                }
+            }
+        }
+
+        .controlls{
+            position: absolute;
+            right: 0;
+            top: 0;
+            display: flex;
+            align-items: center;
+
+            a{
+                width: 38px;
+                height: 38px;
+                border-radius: 50%;
+                background-color: $c_m;
+                border: 2px solid $c_m;
+                margin-left: 30px;
+                transition: 0.12s;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                span{
+                    margin-left: 3px;
+                    color: $c_white;
+                    font-size: 25px;
+                    height: 25px;
+                    transition: 0.12s;
+                }
+
+                &:first-child{
+                    span{
+                        transform: rotateZ(180deg);
+                        margin-left: 0;
+                        margin-right: 3px;
+                    }
+                }
+
+                &.disabled{
+                    background-color: transparent;
+                    span{
+                        color: $c_m;
+                    }
+                }
+            }
+        }
+    }
+
+
 }
 
 @import 'animation.scss';

@@ -1,0 +1,21 @@
+@keyframes btn-standart-bg-text-animation{
+    0%{
+        text-align: left;
+    }50%{
+        color: transparent;
+        text-align: left;
+    }100%{
+        text-align: right;
+    }
+}
+
+@keyframes btn-standart-nonebg-text-animation{
+    0%{
+        text-align: right;
+    }50%{
+        color: transparent;
+        text-align: right;
+    }100%{
+        text-align: left;
+    }
+}

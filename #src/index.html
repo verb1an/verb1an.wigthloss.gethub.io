@@ -7,6 +7,8 @@
     <title>Wight Loss</title>
 
     <link rel="stylesheet" href="css/main.min.css">
+    <script src="lib/hammer.min.js"></script>
+    <script src="js/index.min.js"></script>
 </head>
 <body>
 
@@ -38,7 +40,7 @@
                         <svg class="bgsetka" width="77" height="77" viewBox="0 0 77 77" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M73.3 5.88C71.68 5.88 70.36 4.55999 70.36 2.93999C70.36 1.31999 71.68 0 73.3 0C74.92 0 76.24 1.31999 76.24 2.93999C76.24 4.55999 74.93 5.88 73.3 5.88ZM76.24 20.53C76.24 18.91 74.92 17.59 73.3 17.59C71.68 17.59 70.36 18.91 70.36 20.53C70.36 22.15 71.68 23.47 73.3 23.47C74.93 23.47 76.24 22.16 76.24 20.53ZM76.24 38.12C76.24 36.5 74.92 35.18 73.3 35.18C71.68 35.18 70.36 36.5 70.36 38.12C70.36 39.74 71.68 41.06 73.3 41.06C74.93 41.06 76.24 39.75 76.24 38.12ZM76.24 55.71C76.24 54.09 74.92 52.77 73.3 52.77C71.68 52.77 70.36 54.09 70.36 55.71C70.36 57.33 71.68 58.65 73.3 58.65C74.93 58.66 76.24 57.34 76.24 55.71ZM76.24 73.31C76.24 71.69 74.92 70.37 73.3 70.37C71.68 70.37 70.36 71.69 70.36 73.31C70.36 74.93 71.68 76.25 73.3 76.25C74.93 76.25 76.24 74.93 76.24 73.31ZM58.65 2.93999C58.65 1.31999 57.33 0 55.71 0C54.09 0 52.77 1.31999 52.77 2.93999C52.77 4.55999 54.09 5.88 55.71 5.88C57.34 5.88 58.65 4.55999 58.65 2.93999ZM58.65 20.53C58.65 18.91 57.33 17.59 55.71 17.59C54.09 17.59 52.77 18.91 52.77 20.53C52.77 22.15 54.09 23.47 55.71 23.47C57.34 23.47 58.65 22.16 58.65 20.53ZM58.65 38.12C58.65 36.5 57.33 35.18 55.71 35.18C54.09 35.18 52.77 36.5 52.77 38.12C52.77 39.74 54.09 41.06 55.71 41.06C57.34 41.06 58.65 39.75 58.65 38.12ZM58.65 55.71C58.65 54.09 57.33 52.77 55.71 52.77C54.09 52.77 52.77 54.09 52.77 55.71C52.77 57.33 54.09 58.65 55.71 58.65C57.34 58.66 58.65 57.34 58.65 55.71ZM58.65 73.31C58.65 71.69 57.33 70.37 55.71 70.37C54.09 70.37 52.77 71.69 52.77 73.31C52.77 74.93 54.09 76.25 55.71 76.25C57.34 76.25 58.65 74.93 58.65 73.31ZM41.06 2.93999C41.06 1.31999 39.74 0 38.12 0C36.5 0 35.18 1.31999 35.18 2.93999C35.18 4.55999 36.5 5.88 38.12 5.88C39.74 5.88 41.06 4.55999 41.06 2.93999ZM41.06 20.53C41.06 18.91 39.74 17.59 38.12 17.59C36.5 17.59 35.18 18.91 35.18 20.53C35.18 22.15 36.5 23.47 38.12 23.47C39.74 23.47 41.06 22.16 41.06 20.53ZM41.06 38.12C41.06 36.5 39.74 35.18 38.12 35.18C36.5 35.18 35.18 36.5 35.18 38.12C35.18 39.74 36.5 41.06 38.12 41.06C39.74 41.06 41.06 39.75 41.06 38.12ZM41.06 55.71C41.06 54.09 39.74 52.77 38.12 52.77C36.5 52.77 35.18 54.09 35.18 55.71C35.18 57.33 36.5 58.65 38.12 58.65C39.74 58.65 41.06 57.34 41.06 55.71ZM41.06 73.31C41.06 71.69 39.74 70.37 38.12 70.37C36.5 70.37 35.18 71.69 35.18 73.31C35.18 74.93 36.5 76.25 38.12 76.25C39.74 76.25 41.06 74.93 41.06 73.31ZM23.47 2.93999C23.47 1.31999 22.15 0 20.53 0C18.91 0 17.59 1.31999 17.59 2.93999C17.59 4.55999 18.91 5.88 20.53 5.88C22.15 5.88 23.47 4.55999 23.47 2.93999ZM23.47 20.53C23.47 18.91 22.15 17.59 20.53 17.59C18.91 17.59 17.59 18.91 17.59 20.53C17.59 22.15 18.91 23.47 20.53 23.47C22.15 23.47 23.47 22.16 23.47 20.53ZM23.47 38.12C23.47 36.5 22.15 35.18 20.53 35.18C18.91 35.18 17.59 36.5 17.59 38.12C17.59 39.74 18.91 41.06 20.53 41.06C22.15 41.06 23.47 39.75 23.47 38.12ZM23.47 55.71C23.47 54.09 22.15 52.77 20.53 52.77C18.91 52.77 17.59 54.09 17.59 55.71C17.59 57.33 18.91 58.65 20.53 58.65C22.15 58.66 23.47 57.34 23.47 55.71ZM23.47 73.31C23.47 71.69 22.15 70.37 20.53 70.37C18.91 70.37 17.59 71.69 17.59 73.31C17.59 74.93 18.91 76.25 20.53 76.25C22.15 76.25 23.47 74.93 23.47 73.31ZM5.88 2.93999C5.88 1.31999 4.56 0 2.94 0C1.32 0 0 1.31999 0 2.93999C0 4.55999 1.32 5.88 2.94 5.88C4.56 5.88 5.88 4.55999 5.88 2.93999ZM5.88 20.53C5.88 18.91 4.56 17.59 2.94 17.59C1.32 17.59 0 18.91 0 20.53C0 22.15 1.32 23.47 2.94 23.47C4.56 23.47 5.88 22.16 5.88 20.53ZM5.88 38.12C5.88 36.5 4.56 35.18 2.94 35.18C1.32 35.18 0 36.5 0 38.12C0 39.74 1.32 41.06 2.94 41.06C4.56 41.06 5.88 39.75 5.88 38.12ZM5.88 55.71C5.88 54.09 4.56 52.77 2.94 52.77C1.32 52.77 0 54.09 0 55.71C0 57.33 1.32 58.65 2.94 58.65C4.56 58.66 5.88 57.34 5.88 55.71ZM5.88 73.31C5.88 71.69 4.56 70.37 2.94 70.37C1.32 70.37 0 71.69 0 73.31C0 74.93 1.32 76.25 2.94 76.25C4.56 76.25 5.88 74.93 5.88 73.31Z" fill="#0B315E"/>
                         </svg>
-                        <div class="rating">
+                        <div class="intro__rating">
                             <div class="rated">
                                 <span class="i-star"></span><span class="i-star"></span><span class="i-star"></span><span class="i-star"></span><span class="i-star"></span>
                                 <div class="text">5.0 Rated</div>
@@ -51,7 +53,6 @@
                             </div>
                         </article>
                         <div class="imges">
-                            <img src="images/svg/main-bg-1.svg" alt="">
                             <img src="images/main/1.png" alt="">
                         </div>
                     </div>
@@ -84,7 +85,6 @@
                             <img class="bgsetka" src="images/svg/bg-setka.svg" alt="">
                             <img class="bglines" src="images/svg/bg-lines.svg" alt="">
                             <div class="mask">
-                                <img src="images/svg/main-bg-2.svg" alt="">
                                 <img src="images/main/2.png" alt="">
                             </div>
                         </div>
@@ -120,7 +120,7 @@
                                     <h4 class="name">Kyle</h4>
                                 </div>
                                 <div class="rating">
-                                    <span class="i-star"></span><span class="i-star"></span><span class="i-star"></span><span class="i-star"></span><span class="i-star"></span>
+                                    <span class="i-star en"></span><span class="i-star en"></span><span class="i-star en"></span><span class="i-star en"></span><span class="i-star en"></span>
                                 </div>
                             </arricle>
                             <arricle class="slide">
@@ -130,7 +130,7 @@
                                     <h4 class="name">Diana</h4>
                                 </div>
                                 <div class="rating">
-                                    <span class="i-star"></span><span class="i-star"></span><span class="i-star"></span><span class="i-star"></span><span class="i-star"></span>
+                                    <span class="i-star en"></span><span class="i-star en"></span><span class="i-star en"></span><span class="i-star en"></span><span class="i-star en"></span>
                                 </div>
                             </arricle>
                             <arricle class="slide">
@@ -140,7 +140,37 @@
                                     <h4 class="name">Emma</h4>
                                 </div>
                                 <div class="rating">
-                                    <span class="i-star"></span><span class="i-star"></span><span class="i-star"></span><span class="i-star"></span><span class="i-star"></span>
+                                    <span class="i-star en"></span><span class="i-star en"></span><span class="i-star en"></span><span class="i-star en"></span><span class="i-star en"></span>
+                                </div>
+                            </arricle>
+                            <arricle class="slide">
+                                <div class="text"><p>Reset is the first thing that’s worked in a long time. I’m losing weight! <span class="i-marks"></span></p></div>
+                                <div class="user">
+                                    <img src="images/avatars/slider-1.jpg" alt="">
+                                    <h4 class="name">Kyle</h4>
+                                </div>
+                                <div class="rating">
+                                    <span class="i-star en"></span><span class="i-star en"></span><span class="i-star en"></span><span class="i-star"></span><span class="i-star"></span>
+                                </div>
+                            </arricle>
+                            <arricle class="slide">
+                                <div class="text"><p>I love Reset’s weight loss program and I’ve already lost 17 lb so far. <span class="i-marks"></span></p></div>
+                                <div class="user">
+                                    <img src="images/avatars/slider-2.jpg" alt="">
+                                    <h4 class="name">Diana</h4>
+                                </div>
+                                <div class="rating">
+                                    <span class="i-star en"></span><span class="i-star en"></span><span class="i-star en"></span><span class="i-star en"></span><span class="i-star"></span>
+                                </div>
+                            </arricle>
+                            <arricle class="slide">
+                                <div class="text"><p>I’ve lost 27 lb so far. It's crazy how well the Reset program works! <span class="i-marks"></span></p></div>
+                                <div class="user">
+                                    <img src="images/avatars/slider-3.jpg" alt="">
+                                    <h4 class="name">Emma</h4>
+                                </div>
+                                <div class="rating">
+                                    <span class="i-star en"></span><span class="i-star en"></span><span class="i-star en"></span><span class="i-star en"></span><span class="i-star en"></span>
                                 </div>
                             </arricle>
 
@@ -148,6 +178,57 @@
                                 <a class="cont back disabled"><span class="i-angle"></span></a>
                                 <a class="cont forw"><span class="i-angle"></span></a>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="aboutoursystem">
+            <div class="container">
+                <div class="section__inner">
+                    <div class="section__headers">
+                        <h2 class="title">A proven system powered by cutting-edge science</h2>
+                        <div class="text">
+                            <p>Reset two days a week, eat normally the other five.</p>
+                            <p>This system has been scientifically-validated to produce real, lasting weight loss in numerous studies like <a class="link fm" href="">this</a> one and <a class="link fm" href="">this</a> one.</p>
+                            <p>It's different from what you've tried before and that's why it works so well. Are you ready to commit to lasting results?</p>
+                        </div>
+
+                        <div class="fortitle">Take the quiz for</div>
+                        <div class="buttons">
+                            <a href="#" class="btn btn--standart btn--nbg btn--male">Male</a>
+                            <a href="#" class="btn btn--standart btn--nbg btn--female">Female</a>
+                        </div>
+                    </div>
+                    <div class="right__img__block">
+                        <article class="section__review">
+                            <svg width="127" height="142" viewBox="0 0 127 142" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M67.9545 67.3643C55.8504 50.2859 32.1934 46.2535 15.115 58.3576L0.000174281 37.0312C6.86166 32.1682 14.6138 28.7043 22.814 26.8373C31.0142 24.9702 39.5018 24.7366 47.7923 26.1497C56.0827 27.5629 64.0137 30.5951 71.1323 35.0733C78.2509 39.5515 84.4177 45.388 89.2807 52.2495C94.1437 59.111 97.6077 66.8631 99.4747 75.0633C101.342 83.2635 101.575 91.7511 100.162 100.042C98.7491 108.332 95.7168 116.263 91.2386 123.382C86.7605 130.5 80.924 136.667 74.0625 141.53L58.9478 120.204C58.9478 120.204 58.9478 120.204 58.9478 120.204C76.0262 108.1 80.0586 84.4426 67.9545 67.3643Z" fill="url(#paint0_linear)"/>
+                                <defs>
+                                <linearGradient id="paint0_linear" x1="96.0824" y1="116.846" x2="80.4071" y2="28.3891" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#FF3B63"/>
+                                <stop offset="1" stop-color="#FF3B63" stop-opacity="0.65"/>
+                                </linearGradient>
+                                </defs>
+                            </svg>
+                            <img src="images/avatars/reviews-2.jpg" alt="" class="user__avatar">
+                            <div class="review">
+                                <div class="text">
+                                    Reset is the First thing thats worked in a long time. I’m losing weight
+                                </div>
+                                <div class="rating">
+                                    <span class="i-star"></span>
+                                    <span class="i-star"></span>
+                                    <span class="i-star"></span>
+                                    <span class="i-star"></span>
+                                    <span class="i-star"></span>
+                                </div>
+                            </div>
+                            
+                        </article>
+                        <div class="imges">
+                            <img src="images/main/3.png" alt="">
                         </div>
                     </div>
                 </div>

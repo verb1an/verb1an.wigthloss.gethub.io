@@ -420,6 +420,7 @@ a.link.fm:hover {
   color: #0E0D4C;
   margin: 0;
   font-size: 1.5rem;
+  margin-bottom: 25px;
 }
 
 .section .section__headers h1.title {
@@ -427,7 +428,7 @@ a.link.fm:hover {
   line-height: 3rem;
 }
 
-.section .section__headers .subtitle {
+.section .section__headers .subtitle, .section .section__headers .text p {
   font-size: 0.9rem;
   line-height: 1.3rem;
   color: #5B6996;
@@ -452,6 +453,57 @@ a.link.fm:hover {
 
 .section .section__headers .buttons .btn {
   margin-right: 30px;
+}
+
+.section .rating span {
+  font-size: 1rem;
+  padding: 6px;
+  color: #FFDB73;
+}
+
+.section .section__review {
+  position: absolute;
+  padding: 16px;
+  background-color: #FFFFFF;
+  border-radius: 15px;
+  -webkit-box-shadow: 0px 0px 150px rgba(11, 11, 11, 0.1);
+          box-shadow: 0px 0px 150px rgba(11, 11, 11, 0.1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+}
+
+.section .section__review img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-right: 12px;
+}
+
+.section .section__review .review {
+  max-width: 230px;
+}
+
+.section .section__review .review .text {
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1.3rem;
+  color: #0E0D4C;
+}
+
+.section .section__review .rating {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.section .section__review .rating span {
+  display: block;
 }
 
 .header {
@@ -614,7 +666,7 @@ a.link.fm:hover {
   left: 0;
 }
 
-#intro .right__img__block .rating {
+#intro .right__img__block .intro__rating {
   position: absolute;
   top: 50%;
   left: 0;
@@ -630,16 +682,16 @@ a.link.fm:hover {
   text-align: center;
 }
 
-#intro .right__img__block .rating span {
+#intro .right__img__block .intro__rating span {
   font-size: 15px;
   color: #FF3B63;
 }
 
-#intro .right__img__block .rating span + span {
+#intro .right__img__block .intro__rating span + span {
   margin-left: 3px;
 }
 
-#intro .right__img__block .rating .text {
+#intro .right__img__block .intro__rating .text {
   font-size: 0.7rem;
   font-weight: 500;
   color: #0E0D4C;
@@ -710,30 +762,19 @@ a.link.fm:hover {
 
 #intro .right__img__block .imges {
   position: relative;
-  width: 500px;
-  height: 460px;
+  width: 450px;
+  height: 490px;
   border-radius: 250px;
   overflow: hidden;
+  margin-left: 50px;
 }
 
 #intro .right__img__block .imges img {
   position: absolute;
-}
-
-#intro .right__img__block .imges picture:first-child img {
-  left: 0;
+  width: 100%;
+  height: 100%;
   top: 0;
-  width: 540px;
-  height: 540px;
-}
-
-#intro .right__img__block .imges picture:last-child img {
-  bottom: 0;
-  height: 430px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
+  left: 0;
 }
 
 #partners .content {
@@ -870,6 +911,9 @@ a.link.fm:hover {
           box-shadow: 0px 10px 20px rgba(198, 198, 198, 0.07);
   margin-right: 30px;
   min-width: 370px;
+  -webkit-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
 }
 
 #reviews__slider .slider .slide .text {
@@ -937,9 +981,11 @@ a.link.fm:hover {
 }
 
 #reviews__slider .slider .slide .rating span {
-  font-size: 1rem;
-  padding: 6px;
-  color: #FFDB73;
+  color: #999;
+}
+
+#reviews__slider .slider .slide .rating span.en {
+  color: #ffdb73;
 }
 
 #reviews__slider .slider .controlls {
@@ -999,6 +1045,54 @@ a.link.fm:hover {
 
 #reviews__slider .slider .controlls a.disabled span {
   color: #6957ED;
+}
+
+#aboutoursystem .section__headers {
+  max-width: 430px;
+}
+
+#aboutoursystem .section__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#aboutoursystem .section__inner .right__img__block {
+  position: relative;
+}
+
+#aboutoursystem .section__inner .right__img__block .section__review {
+  top: 0;
+  left: 0;
+  -webkit-transform: translate(-20%, -50%);
+      -ms-transform: translate(-20%, -50%);
+          transform: translate(-20%, -50%);
+}
+
+#aboutoursystem .section__inner .right__img__block .section__review svg {
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-transform: translate(50%, -50%);
+      -ms-transform: translate(50%, -50%);
+          transform: translate(50%, -50%);
+}
+
+#aboutoursystem .section__inner .right__img__block .imges {
+  width: 570px;
+  height: 560px;
+}
+
+#aboutoursystem .section__inner .right__img__block .imges img {
+  width: 100%;
+  height: 100%;
+  margin-left: 20px;
 }
 
 @-webkit-keyframes btn-standart-bg-text-animation {

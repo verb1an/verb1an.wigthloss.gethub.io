@@ -1,4 +1,21 @@
 document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('#bar').addEventListener('click', function() {
+        mobileMenu();
+    });
+    document.querySelectorAll('.nav .link').forEach((el) => {
+        el.addEventListener('click', function() {
+            mobileMenu();
+        })
+    });
+
+    function mobileMenu() {
+        if(window.innerWidth < 657) {
+            document.querySelector('.nav').classList.toggle('mobile--active');
+            document.querySelector('html').classList.toggle('hidden');
+        }
+    }
+
+
     const myElement = document.querySelector('#slider');
     const items = document.querySelectorAll('.slider .slide');
     const controlls = document.querySelectorAll('.controlls .cont');

@@ -57,6 +57,10 @@ html{
     font-family: 'Poppins';
     font-size: 20px;
     font-weight: 400;
+
+    &.hidden{
+        overflow: hidden;
+    }
 }
 
 body{

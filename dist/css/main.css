@@ -240,6 +240,10 @@ html {
   font-weight: 400;
 }
 
+html.hidden {
+  overflow: hidden;
+}
+
 body {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(15.63%, #EBF9FF), color-stop(27.01%, #FFFFFF), to(#FFFFFF));
   background: -o-linear-gradient(top, #EBF9FF 15.63%, #FFFFFF 27.01%, #FFFFFF 100%);
@@ -1359,10 +1363,12 @@ a.link.fm:hover {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    z-index: 110;
   }
   .nav {
     position: fixed;
-    left: -100%;
+    pointer-events: none;
+    left: 0%;
     top: 0;
     width: 100%;
     height: 100%;
@@ -1380,21 +1386,69 @@ a.link.fm:hover {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    -webkit-transition: 0.4s;
-    -o-transition: 0.4s;
-    transition: 0.4s;
-  }
-  .nav.mobile--active {
-    opacity: 1;
-    left: 0;
+    -webkit-transition: 0.8s;
+    -o-transition: 0.8s;
+    transition: 0.8s;
+    z-index: 100;
   }
   .nav .link {
     font-size: 1.4rem;
     margin-bottom: 34px;
     text-align: center;
+    left: -100%;
+    -webkit-transition: 0.1s;
+    -o-transition: 0.1s;
+    transition: 0.1s;
+    z-index: 10;
   }
   .nav .link + .link {
     margin-left: 0;
+  }
+  .nav:before, .nav:after {
+    content: '';
+    position: absolute;
+    width: 230%;
+    height: 230%;
+    z-index: -2;
+    -webkit-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+  }
+  .nav:before {
+    background-color: #6957ED;
+    -webkit-transform: translate(-100%, -100%) rotateZ(45deg);
+        -ms-transform: translate(-100%, -100%) rotate(45deg);
+            transform: translate(-100%, -100%) rotateZ(45deg);
+    left: 0;
+    top: 0;
+  }
+  .nav:after {
+    background-color: #FF3B63;
+    -webkit-transform: translate(100%, 100%) rotateZ(45deg);
+        -ms-transform: translate(100%, 100%) rotate(45deg);
+            transform: translate(100%, 100%) rotateZ(45deg);
+    bottom: 0;
+    right: 0;
+  }
+  .nav.mobile--active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .nav.mobile--active .link {
+    -webkit-transition-delay: .36s;
+         -o-transition-delay: .36s;
+            transition-delay: .36s;
+    left: 0;
+  }
+  .nav.mobile--active:before {
+    -webkit-transform: translate(-50%, -50%) rotateZ(45deg);
+        -ms-transform: translate(-50%, -50%) rotate(45deg);
+            transform: translate(-50%, -50%) rotateZ(45deg);
+  }
+  .nav.mobile--active:after {
+    -webkit-transform: translate(50%, 50%) rotateZ(45deg);
+        -ms-transform: translate(50%, 50%) rotate(45deg);
+            transform: translate(50%, 50%) rotateZ(45deg);
   }
   .section {
     padding: 50px 0;

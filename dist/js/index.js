@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const items = document.querySelectorAll('.slider .slide');
     const controlls = document.querySelectorAll('.controlls .cont');
     const maxWidth = items[0].getBoundingClientRect().width+30;
+    const visibleSlides = document.querySelector('#reviews__slider .content').getBoundingClientRect().width/maxWidth;
     let hammertime = new Hammer(myElement, {});
 
     let swiped = 0;
@@ -13,39 +14,49 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         
         if(ev.isFinal) {
-            swiped = Math.round((swiped + ev.deltaX)/maxWidth) * maxWidth;
+            let sw = Math.round((swiped + ev.deltaX)/maxWidth);
+            swiped = sw * maxWidth;
             move();
         }
     });
 
     controlls.forEach((el) => {
         el.addEventListener('click', function() {
-            if( el.classList.contains('forw') ) {
-                swiped -= maxWidth;
-            }else{
-                swiped += maxWidth;
+            if( !el.classList.contains('disabled') ) {
+                if( el.classList.contains('forw') ) {
+                    swiped -= maxWidth;
+                }else{
+                    swiped += maxWidth;
+                }
+                move();
+                resetControlls();
             }
-            move();
-            resetControlls();
         })
     })
 
     function move() {
+        let resetMawSwped = false;
         if( swiped >= 100 ) {
             swiped = 0;
-        }else if( swiped <= (-maxWidth*items.length+maxWidth*2-100) ){
-            swiped = -maxWidth*items.length+maxWidth*2;
+        }else if( swiped <= (-maxWidth*items.length+maxWidth*visibleSlides+100) ){
+            swiped = -maxWidth*items.length+document.querySelector('#reviews__slider .content').getBoundingClientRect().width+30;
+            resetMawSwped = true;
         }
         items.forEach((el) => {
             el.style = `transform: translateX(${swiped}px)`;
-        })
-        resetControlls()
+        });
+
+        if(resetMawSwped) {
+            swiped = -maxWidth*items.length+maxWidth;
+        }
+        console.log(swiped)
+        resetControlls();
     }
 
     function resetControlls() {
         if( swiped == 0 ) {
             controlls[0].classList.add('disabled');
-        }else if( swiped == -maxWidth*items.length+maxWidth*2 ) {
+        }else if( swiped <= -maxWidth*items.length+document.querySelector('#reviews__slider .content').getBoundingClientRect().width+30 ) {
             controlls[1].classList.add('disabled');
         }else{
             controlls.forEach((el) => {

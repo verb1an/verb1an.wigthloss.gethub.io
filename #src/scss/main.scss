@@ -559,50 +559,39 @@ a{
         position: relative;
         display: flex;
         align-items: start;
+    }
 
-        .left__img__block{
-            width: 580px;
-            height: 620px;
-            margin-right: 50px;
+    .left__img__block{
+        width: 580px;
+        height: 620px;
+        margin-right: 50px;
 
-            .imges{
-
+        .imges{
+            position: relative;
+            .bgsetka{
+                position: absolute;
+                top: 40px;
+                left: 100px;
+            }
+            .bglines{
+                position: absolute;
+                top: 45%;
+                right: 90px;
+                transform: translateY(-50%);
+            }
+            
+            .mask{
                 position: relative;
-                .bgsetka{
-                    position: absolute;
-                    top: 40px;
-                    left: 100px;
-                }
-                .bglines{
-                    position: absolute;
-                    top: 45%;
-                    right: 90px;
-                    transform: translateY(-50%);
-                }
-                
-                .mask{
-                    position: relative;
-                    width: 580px;
-                    height: 580px;
-                    overflow: hidden;
-                    border-radius: 50%;
+                width: 580px;
+                height: 580px;
+                overflow: hidden;
+                border-radius: 50%;
 
-                    picture:first-child{
-                        img{
-                            position: absolute;
-                            left: 0%;
-                            top: 0;
-                        }
-                    }
-    
-                    picture:last-child{
-                        img{
-                            position: absolute;
-                            left: 50%;
-                            bottom: 20px;
-                            transform: translateX(-50%);
-                        }
-                    }
+                img{
+                    position: absolute;
+                    left: 50%;
+                    bottom: 0;
+                    transform: translateX(-50%);
                 }
             }
         }
@@ -614,6 +603,12 @@ a{
 
     .section__inner{
         position: relative;
+    }
+
+    .section__headers{
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
     }
 
     .slider{
@@ -686,48 +681,45 @@ a{
                 }
             }
         }
+    }
 
-        .controlls{
-            position: absolute;
-            right: 0;
-            top: 0;
+    .controlls{
+        display: flex;
+        align-items: center;
+
+        a{
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background-color: $c_m;
+            border: 2px solid $c_m;
+            margin-left: 30px;
+            transition: 0.12s;
+
             display: flex;
+            justify-content: center;
             align-items: center;
 
-            a{
-                width: 38px;
-                height: 38px;
-                border-radius: 50%;
-                background-color: $c_m;
-                border: 2px solid $c_m;
-                margin-left: 30px;
+            span{
+                margin-left: 3px;
+                color: $c_white;
+                font-size: 25px;
+                height: 25px;
                 transition: 0.12s;
+            }
 
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
+            &:first-child{
                 span{
-                    margin-left: 3px;
-                    color: $c_white;
-                    font-size: 25px;
-                    height: 25px;
-                    transition: 0.12s;
+                    transform: rotateZ(180deg);
+                    margin-left: 0;
+                    margin-right: 3px;
                 }
+            }
 
-                &:first-child{
-                    span{
-                        transform: rotateZ(180deg);
-                        margin-left: 0;
-                        margin-right: 3px;
-                    }
-                }
-
-                &.disabled{
-                    background-color: transparent;
-                    span{
-                        color: $c_m;
-                    }
+            &.disabled{
+                background-color: transparent;
+                span{
+                    color: $c_m;
                 }
             }
         }
@@ -818,6 +810,7 @@ a{
         display: flex;
         justify-content: space-between;
         align-items: start;
+        flex-wrap: wrap;
 
         .tab{
             display: flex;
